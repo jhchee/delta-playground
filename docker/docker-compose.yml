@@ -31,11 +31,6 @@ services:
       - mariadb
       - createbuckets
 
-  mongo:
-    image: mongo:6.0
-    ports:
-      - '27017:27017'
-
   createbuckets:
     image: minio/mc
     depends_on:
