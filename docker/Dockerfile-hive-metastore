@@ -27,8 +27,8 @@ RUN curl -L https://apache.org/dist/hive/hive-standalone-metastore-${METASTORE_V
 COPY conf/metastore-site.xml ${HIVE_HOME}/conf
 COPY scripts/entrypoint.sh /entrypoint.sh
 
-RUN groupadd -r hive --gid=1000 && \
-    useradd -r -g hive --uid=1000 -d ${HIVE_HOME} hive && \
+RUN groupadd -r hive --gid=20395 && \
+    useradd -r -g hive --uid=20395 -d ${HIVE_HOME} hive && \
     chown hive:hive -R ${HIVE_HOME} && \
     chown hive:hive /entrypoint.sh && chmod +x /entrypoint.sh
 

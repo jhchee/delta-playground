@@ -23,8 +23,9 @@ services:
     command: server  --console-address ":9001" /data
 
   hive-metastore:
-    build: .
-    image: hive-metastore:latest
+    build:
+      context: .
+      dockerfile: Dockerfile-hive-metastore
     ports:
       - "9083:9083"
     depends_on:
